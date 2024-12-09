@@ -48,9 +48,9 @@ export async function loginUser(req, res) {
         const token = generateToken(user._id, user.role);
         res.cookie('auth', token, { 
             httpOnly: true,
-            secure: false,
-            sameSite: 'Lax',
-            maxAge: 3600000*24*7
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production'? 'None' : 'Lax',
+            maxAge: 3600000
         });
 
         res.status(200).json({ 
