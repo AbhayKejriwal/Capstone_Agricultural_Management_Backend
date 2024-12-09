@@ -23,7 +23,7 @@ import marketRoutes from './routes/market.routes.js';
 const app = express();
 
 const corsOptions = {
-    origin: 'https://capstone-agricultural-management-frontend.vercel.app/',
+    origin: 'https://capstone-agricultural-management-frontend.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     optionsSuccessStatus: 200
